@@ -1,3 +1,1 @@
-CREATE TABLE`department`(
-
-);
+const inquirer = require('inquirer');
