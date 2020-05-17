@@ -47,3 +47,13 @@ function addDepartment() {
                 name: answers.departmentName,
 
             },
+
+            function (err, res) {
+                if (err) throw err;
+                console.log(res.affectedRows + " product inserted!\n");
+                // Call updateProduct AFTER the INSERT completes
+
+            }
+        );
+    })
+}
