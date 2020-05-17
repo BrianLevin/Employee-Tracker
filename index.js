@@ -61,7 +61,7 @@ function addDepartment() {
         );
     })
 }
-function addemployee() {
+function addEmployee() {
     inquirer.prompt([{
         type: 'input',
         name: 'employeeName',
