@@ -33,3 +33,9 @@ inquirer.prompt(questions).then(function (answers) {
     }
 
 });
+
+function addDepartment() {
+    inquirer.prompt([{
+        type: 'input',
+        name: 'departmentName',
+        message: 'what is the name of the department?'
