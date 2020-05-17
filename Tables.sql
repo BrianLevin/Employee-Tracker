@@ -1,4 +1,5 @@
 CREATE TABLE `department`(
 id INT NOT NULL,
 make VARCHAR(30),
+PRIMARY KEY(id)
 );
