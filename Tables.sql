@@ -21,3 +21,9 @@ manager_id INT
 
 
 );
+
+SELECT employee.id, employee.first_name, employee.last_name,
+	role.title, role.salary, department.name AS departmentName
+FROM employee
+LEFT JOIN role ON employee.role_id = role.id
+LEFT JOIN department ON role.department_id = department.id;
