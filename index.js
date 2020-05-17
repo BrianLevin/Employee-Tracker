@@ -39,3 +39,11 @@ function addDepartment() {
         type: 'input',
         name: 'departmentName',
         message: 'what is the name of the department?'
+    }]).then(function (answers) {
+        console.log(answers);
+        var query = connection.query(
+            "INSERT INTO department SET ?",
+            {
+                name: answers.departmentName,
+
+            },
