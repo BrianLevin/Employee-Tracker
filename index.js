@@ -2,7 +2,7 @@ const inquirer = require('inquirer');
 
 const mysql = require("mysql");
 
-var connection = mysql.createConnection({
-
+const connection = mysql.createConnection({
+    host: "127.0.0.1",
 
 });
