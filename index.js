@@ -17,3 +17,19 @@ connection.connect(function (err) {
         throw err;
     }
 })
+
+const questions = [{
+    type: 'list', // This will display the list of licenses
+    name: 'options',
+    message: 'What would you like to do?',
+    choices: ['add employee', 'add role', 'add department', 'view employee', 'view role', 'view department', 'update employee roles', 'None'], // the choices for the differant license types
+
+
+}];
+
+inquirer.prompt(questions).then(function (answers) {
+    if (answers.options === 'add department') {
+        addDepartment();
+    }
+
+});
