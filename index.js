@@ -32,6 +32,8 @@ inquirer.prompt(questions).then(function (answers) {
         addDepartment();
     } else if (answers.options === 'add employee') {
         addEmployee();
+    } else if (answers.options === 'add role') {
+        addRole();
     }
 
 });
@@ -70,6 +72,30 @@ function addemployee() {
             "INSERT INTO employee SET ?",
             {
                 name: answers.employeeName,
+
+
+            },
+            function (err, res) {
+                if (err) throw err;
+                console.log(res.affectedRows + " product inserted!\n");
+                // Call updateProduct AFTER the INSERT completes
+
+            }
+        );
+    })
+
+}
+function addRole() {
+    inquirer.prompt([{
+        type: 'input',
+        name: 'employeeRole',
+        message: 'what is the role of the employee?'
+    }]).then(function (answers) {
+        console.log(answers);
+        var query = connection.query(
+            "INSERT INTO employee SET ?",
+            {
+                name: answers.employeeRole,
 
 
             },
