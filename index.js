@@ -30,6 +30,8 @@ const questions = [{
 inquirer.prompt(questions).then(function (answers) {
     if (answers.options === 'add department') {
         addDepartment();
+    } else if (answers.options === 'add employee') {
+        addEmployee();
     }
 
 });
@@ -56,4 +58,28 @@ function addDepartment() {
             }
         );
     })
+}
+function addemployee() {
+    inquirer.prompt([{
+        type: 'input',
+        name: 'employeeName',
+        message: 'what is the name of the employee?'
+    }]).then(function (answers) {
+        console.log(answers);
+        var query = connection.query(
+            "INSERT INTO employee SET ?",
+            {
+                name: answers.employeeName,
+
+
+            },
+            function (err, res) {
+                if (err) throw err;
+                console.log(res.affectedRows + " product inserted!\n");
+                // Call updateProduct AFTER the INSERT completes
+
+            }
+        );
+    })
+
 }
