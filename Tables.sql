@@ -28,11 +28,12 @@ FROM employee
 LEFT JOIN role ON employee.role_id = role.id
 LEFT JOIN department ON role.department_id = department.id;
 
-Update role
+UPDATE `employee`
 
 SET
-employee.id
+role_id=2 
 
 WHERE 
+ id= 42; 
 
 

@@ -115,16 +115,12 @@ function updateEmployeeRole() {
         type: 'input',
         name: 'updateRole',
         message: 'whos role would you like to update?',
-        choices: [' Bob engineer', 'Mark painter', 'Mike web developer']
+        choices: [' engineer', ' painter', ' web developer']
     }]).then(function (answers) {
         console.log(answers);
         var query = connection.query(
-            "INSERT INTO employee SET ?",
-            {
-                name: answers.employeeRole.id,//?
+            "UPDATE statement ? , employee SET role_id= 2 WHERE id= 42;",
 
-
-            },
             function (err, res) {
                 if (err) throw err;
                 console.log(res.affectedRows + " product inserted!\n");
