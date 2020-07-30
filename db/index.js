@@ -50,3 +50,10 @@ class DB {
       [managerId, employeeId]
     );
   }
+
+    // Find all roles, join with departments to display the department name
+    findAllRoles() {
+        return this.connection.query(
+          "SELECT role.id, role.title, department.name AS department, role.salary FROM role LEFT JOIN department on role.department_id = department.id;"
+        );
+      }
