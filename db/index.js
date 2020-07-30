@@ -25,3 +25,11 @@ class DB {
    createEmployee(employee) {
     return this.connection.query("INSERT INTO employee SET ?", employee);
   }
+
+    // Remove an employee with the given id
+    removeEmployee(employeeId) {
+        return this.connection.query(
+          "DELETE FROM employee WHERE id = ?",
+          employeeId
+        );
+      }
