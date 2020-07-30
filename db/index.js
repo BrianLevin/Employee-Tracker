@@ -62,3 +62,8 @@ class DB {
   createRole(role) {
     return this.connection.query("INSERT INTO role SET ?", role);
   }
+
+  // Remove a role from the db
+  removeRole(roleId) {
+    return this.connection.query("DELETE FROM role WHERE id = ?", roleId);
+  }
