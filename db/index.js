@@ -88,3 +88,11 @@ class DB {
       departmentId
     );
   }
+
+    // Find all employees in a given department, join with roles to display role titles
+    findAllEmployeesByDepartment(departmentId) {
+        return this.connection.query(
+          "SELECT employee.id, employee.first_name, employee.last_name, role.title FROM employee LEFT JOIN role on employee.role_id = role.id LEFT JOIN department department on role.department_id = department.id WHERE department.id = ?;",
+          departmentId
+        );
+      }
