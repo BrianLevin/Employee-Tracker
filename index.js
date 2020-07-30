@@ -71,7 +71,7 @@ function addEmployee() { // function which will add employee
         var query = connection.query(
             "INSERT INTO employee SET ?",
             {
-                name: answers.employeeName,
+               name: answers.employeeName,
 
 
             },
