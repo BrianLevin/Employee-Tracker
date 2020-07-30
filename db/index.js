@@ -80,3 +80,11 @@ class DB {
    createDepartment(department) {
     return this.connection.query("INSERT INTO department SET ?", department);
   }
+
+   // Remove a department
+   removeDepartment(departmentId) {
+    return this.connection.query(
+      "DELETE FROM department WHERE id = ?",
+      departmentId
+    );
+  }
