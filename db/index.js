@@ -41,3 +41,12 @@ class DB {
       [roleId, employeeId]
     );
   }
+
+
+  // Update the given employee's manager
+  updateEmployeeManager(employeeId, managerId) {
+    return this.connection.query(
+      "UPDATE employee SET manager_id = ? WHERE id = ?",
+      [managerId, employeeId]
+    );
+  }
