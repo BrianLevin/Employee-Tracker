@@ -2,7 +2,9 @@
 
  ## Description
 
-We had to  create an interface that makes it  easy for non-developers to view and interact with information stored in databases. We built an architect solution manging a companies employees using MySQL, inquirer, and Node.
+This is a user interface which allows the user to view and manage an  a work organizations information.  The user can view, add, update, and remove employee and department information.
+
+ ## Click [here]() for the live app. This is the  home screen: 
 
 ## github
 Github.com/BrianLevin
